@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbot_strategy>
+    <trade_parameters>
+        <market>Derived</market>
+        <index>Continuous Indices</index>
+        <asset>Volatility 10 (1s) Index</asset>
+        <trade_type>Up/Down</trade_type>
+        <contract_type></contract_type>
+        <default_candle_interval>1 minute</default_candle_interval>
+        <restart_on_error>false</restart_on_error>
+        <restart_last_trade_on_error>true</restart_last_trade_on_error>
+    </trade_parameters>
+    <trade_options>
+        <duration>0</duration>
+        <stake>0.35</stake>
+    </trade_options>
+    <purchase_conditions>
+        <purchase>Not available</purchase>
+    </purchase_conditions>
+    <strategy>
+        <risk_management>No Loss Strategy</risk_management>
+        <martingale_multiplier>2.0</martingale_multiplier>
+        <stop_loss>Optional</stop_loss>
+        <take_profit>Optional</take_profit>
+        <indicators>
+            <indicator type="Moving Average" period="14" condition="Break and Retest" />
+            <indicator type="RSI" period="14" condition="Overbought/Oversold" />
+            <indicator type="Ichimoku" parameters="9,26,52" condition="Cloud Confirmation" />
+        </indicators>
+    </strategy>
+</dbot_strategy>
